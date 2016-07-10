@@ -3,13 +3,13 @@ populateCurrentWeather = (data) ->
 	
 	$('#currentImg').attr('src', getWeatherImage(cCond))
 
-	$('#currentTemp'		).html(cCond['temp_C'] + '/')
-	$('#feelsLike'			).html(cCond['FeelsLikeC'])
-	$('#humidity'			).html(cCond['humidity'] + '/')
-	$('#cloudCover'			).html(cCond['cloudcover'])
-	$('#windSpeed'			).html(cCond['windspeedKmph'] + '/')
-	$('#windDirection'		).html(cCond['winddir16Point'])
-	$('#observationTime'	).html(cCond['observation_time'])
+	$('#currentTemp'        ).html(cCond['temp_C'] + '/')
+	$('#feelsLike'          ).html(cCond['FeelsLikeC'])
+	$('#humidity'           ).html(cCond['humidity'] + '/')
+	$('#cloudCover'         ).html(cCond['cloudcover'])
+	$('#windSpeed'          ).html(cCond['windspeedKmph'] + '/')
+	$('#windDirection'      ).html(cCond['winddir16Point'])
+	$('#observationTime'    ).html(cCond['observation_time'])
 
 getWeatherImage = (cCond) ->
 	wCode = parseInt(cCond['weatherCode'], 10)
@@ -42,17 +42,17 @@ populateForcast = (data, day) ->
 	else
 		dayName = getDayName(weather['date'])
 
-	$("##{day}date"			).html(dayName)
-	$("##{day}max"			).html(weather['maxtempC'] + '/')
-	$("##{day}feelsLike"	).html(hourly['FeelsLikeC'] + '/')
-	$("##{day}min"			).html(weather['mintempC'])
-	$("##{day}humidity"		).html(hourly['humidity'] + '/')
-	$("##{day}cloudCover"	).html(hourly['cloudcover'] + '/')
-	$("##{day}uvIndex"		).html(weather['uvIndex'])
-	$("##{day}chanceOfRain"	).html(hourly['chanceofrain'] + '/')
-	$("##{day}rain"			).html(hourly['precipMM'])
-	$("##{day}windSpeed"	).html(hourly['windspeedKmph'] + '/')
-	$("##{day}windGust"		).html(hourly['WindGustKmph'] + '/')
+	$("##{day}date"         ).html(dayName)
+	$("##{day}max"          ).html(weather['maxtempC'] + '/')
+	$("##{day}feelsLike"    ).html(hourly['FeelsLikeC'] + '/')
+	$("##{day}min"          ).html(weather['mintempC'])
+	$("##{day}humidity"     ).html(hourly['humidity'] + '/')
+	$("##{day}cloudCover"   ).html(hourly['cloudcover'] + '/')
+	$("##{day}uvIndex"      ).html(weather['uvIndex'])
+	$("##{day}chanceOfRain" ).html(hourly['chanceofrain'] + '/')
+	$("##{day}rain"         ).html(hourly['precipMM'])
+	$("##{day}windSpeed"    ).html(hourly['windspeedKmph'] + '/')
+	$("##{day}windGust"     ).html(hourly['WindGustKmph'] + '/')
 	$("##{day}windDirection").html(hourly['winddir16Point'])
 
 populateStocks = (data) ->
