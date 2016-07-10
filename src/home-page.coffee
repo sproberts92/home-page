@@ -11,23 +11,35 @@ populateCurrentWeather = (data) ->
 	$('#windDirection'		).html(cCond['winddir16Point'])
 	$('#observationTime'	).html(cCond['observation_time'])
 
+getDayName = (date) ->
+	daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+	d = date.split('-')
+	d = new Date(d[0], d[1] - 1, d[2])
+	daysOfTheWeek[d.getDay()]
+
 populateForcast = (data, day) ->
 	weather = data['data']['weather'][day]
 	hourly = data['data']['weather'][day]['hourly'][0]
 
 	$("##{day}currentImg").attr('src', hourly['weatherIconUrl'][0]['value'])
 
-	$("##{day}date"			).html(weather['date'])
-	$("##{day}max"			).html(weather['maxtempC'])
+	dayName = ''
+	if day == 0
+		dayName = 'Today'
+	else
+		dayName = getDayName(weather['date'])
+
+	$("##{day}date"			).html(dayName)
+	$("##{day}max"			).html(weather['maxtempC'] + '/')
+	$("##{day}feelsLike"	).html(hourly['FeelsLikeC'] + '/')
 	$("##{day}min"			).html(weather['mintempC'])
-	$("##{day}feelsLike"	).html(hourly['FeelsLikeC'])
-	$("##{day}humidity"		).html(hourly['humidity'])
-	$("##{day}cloudCover"	).html(hourly['cloudcover'])
+	$("##{day}humidity"		).html(hourly['humidity'] + '/')
+	$("##{day}cloudCover"	).html(hourly['cloudcover'] + '/')
 	$("##{day}uvIndex"		).html(weather['uvIndex'])
+	$("##{day}chanceOfRain"	).html(hourly['chanceofrain'] + '/')
 	$("##{day}rain"			).html(hourly['precipMM'])
-	$("##{day}chanceOfRain"	).html(hourly['chanceofrain'])
-	$("##{day}windSpeed"	).html(hourly['windspeedKmph'])
-	$("##{day}windGust"		).html(hourly['WindGustKmph'])
+	$("##{day}windSpeed"	).html(hourly['windspeedKmph'] + '/')
+	$("##{day}windGust"		).html(hourly['WindGustKmph'] + '/')
 	$("##{day}windDirection").html(hourly['winddir16Point'])
 
 $(document).ready ->

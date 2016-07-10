@@ -5,6 +5,8 @@
 		<title>Home</title>
 		<meta charset='utf-8'/>
 
+		<link type="text/css" rel="stylesheet" href="build/style.css"/>
+
 		<script src='ext/jquery.min.js'></script>
 		<script src='build/home-page.js'></script>
 	</head>
@@ -14,105 +16,192 @@
 		<h2>Weather</h2>
 
 		<div class='weather'>
-			<div><img id='currentImg'/></div>
+			<div class='weatherImg'><img id='currentImg'/></div>
 			<div>
-				<div>Current temp</div><div id='currentTemp'></div>
-				<div>Feels like</div><div id='feelsLike'></div>
-				<div>Humidity</div><div id='humidity'></div>
-				<div>Cloud cover</div><div id='cloudCover'></div>
-				<div>Wind speed</div><div id='windSpeed'></div>
-				<div>Wind direction</div><div id='windDirection'></div>
-				<div>Observation time</div><div id='observationTime'></div>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Current/Feels like</div>
+					<div class='weatherVal' id='currentTemp'></div>
+					<div class='weatherVal' id='feelsLike'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Humidity/Cloud</div>
+					<div class='weatherVal' id='humidity'></div>
+					<div class='weatherVal' id='cloudCover'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Wind speed/dir</div>
+					<div class='weatherVal' id='windSpeed'></div>
+					<div class='weatherVal' id='windDirection'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Observation time</div>
+					<div class='weatherVal' id='observationTime'></div>
+				</div><br><br><br>
 			</div>
 		</div>
 
 		<div class='weather'>
-			<div><img id='0currentImg'/></div>
+			<div class='weatherImg'><img id='0currentImg'/></div>
 			<div>
-				<div>Date</div><div id='0date'></div>
-				<div>Max</div><div id='0max'></div>
-				<div>Min</div><div id='0min'></div>
-				<div>Feels like</div><div id='0feelsLike'></div>
-				<div>Humidity</div><div id='0humidity'></div>
-				<div>Cloud cover</div><div id='0cloudCover'></div>
-				<div>UV index</div><div id='0uvIndex'></div>
-				<div>Rain (mm)</div><div id='0rain'></div>
-				<div>Chance of rain</div><div id='0chanceOfRain'></div>
-				<div>Wind speed</div><div id='0windSpeed'></div>
-				<div>Wind gust</div><div id='0windGust'></div>
-				<div>Wind direction</div><div id='0windDirection'></div>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Date</div>
+					<div class='weatherVal' id='0date'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Max/Feels like/Min</div>
+					<div class='weatherVal' id='0max'></div>
+					<div class='weatherVal' id='0feelsLike'></div>
+					<div class='weatherVal' id='0min'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Hum/Cloud/UV</div>
+					<div class='weatherVal' id='0humidity'></div>
+					<div class='weatherVal' id='0cloudCover'></div>
+					<div class='weatherVal' id='0uvIndex'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Rain chance/mm</div>
+					<div class='weatherVal' id='0chanceOfRain'></div>
+					<div class='weatherVal' id='0rain'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Wind speed/gust/dir</div>
+					<div class='weatherVal' id='0windSpeed'></div>
+					<div class='weatherVal' id='0windGust'></div>
+					<div class='weatherVal' id='0windDirection'></div>
+				</div><br><br>
 			</div>
 		</div>
 
 		<div class='weather'>
-			<div><img id='1currentImg'/></div>
+			<div class='weatherImg'><img id='1currentImg'/></div>
 			<div>
-				<div>Date</div><div id='1date'></div>
-				<div>Max</div><div id='1max'></div>
-				<div>Min</div><div id='1min'></div>
-				<div>Feels like</div><div id='1feelsLike'></div>
-				<div>Humidity</div><div id='1humidity'></div>
-				<div>Cloud cover</div><div id='1cloudCover'></div>
-				<div>UV index</div><div id='1uvIndex'></div>
-				<div>Rain (mm)</div><div id='1rain'></div>
-				<div>Chance of rain</div><div id='1chanceOfRain'></div>
-				<div>Wind speed</div><div id='1windSpeed'></div>
-				<div>Wind gust</div><div id='1windGust'></div>
-				<div>Wind direction</div><div id='1windDirection'></div>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Date</div>
+					<div class='weatherVal' id='1date'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Max/Feels like/Min</div>
+					<div class='weatherVal' id='1max'></div>
+					<div class='weatherVal' id='1feelsLike'></div>
+					<div class='weatherVal' id='1min'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Hum/Cloud/UV</div>
+					<div class='weatherVal' id='1humidity'></div>
+					<div class='weatherVal' id='1cloudCover'></div>
+					<div class='weatherVal' id='1uvIndex'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Rain chance/mm</div>
+					<div class='weatherVal' id='1chanceOfRain'></div>
+					<div class='weatherVal' id='1rain'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Wind speed/gust/dir</div>
+					<div class='weatherVal' id='1windSpeed'></div>
+					<div class='weatherVal' id='1windGust'></div>
+					<div class='weatherVal' id='1windDirection'></div>
+				</div><br><br>
 			</div>
 		</div>
 
 		<div class='weather'>
-			<div><img id='2currentImg'/></div>
+			<div class='weatherImg'><img id='2currentImg'/></div>
 			<div>
-				<div>Date</div><div id='2date'></div>
-				<div>Max</div><div id='2max'></div>
-				<div>Min</div><div id='2min'></div>
-				<div>Feels like</div><div id='2feelsLike'></div>
-				<div>Humidity</div><div id='2humidity'></div>
-				<div>Cloud cover</div><div id='2cloudCover'></div>
-				<div>UV index</div><div id='2uvIndex'></div>
-				<div>Rain (mm)</div><div id='2rain'></div>
-				<div>Chance of rain</div><div id='2chanceOfRain'></div>
-				<div>Wind speed</div><div id='2windSpeed'></div>
-				<div>Wind gust</div><div id='2windGust'></div>
-				<div>Wind direction</div><div id='2windDirection'></div>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Date</div>
+					<div class='weatherVal' id='2date'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Max/Feels like/Min</div>
+					<div class='weatherVal' id='2max'></div>
+					<div class='weatherVal' id='2feelsLike'></div>
+					<div class='weatherVal' id='2min'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Hum/Cloud/UV</div>
+					<div class='weatherVal' id='2humidity'></div>
+					<div class='weatherVal' id='2cloudCover'></div>
+					<div class='weatherVal' id='2uvIndex'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Rain chance/mm</div>
+					<div class='weatherVal' id='2chanceOfRain'></div>
+					<div class='weatherVal' id='2rain'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Wind speed/gust/dir</div>
+					<div class='weatherVal' id='2windSpeed'></div>
+					<div class='weatherVal' id='2windGust'></div>
+					<div class='weatherVal' id='2windDirection'></div>
+				</div><br><br>
 			</div>
 		</div>
 
 		<div class='weather'>
-			<div><img id='3currentImg'/></div>
+			<div class='weatherImg'><img id='3currentImg'/></div>
 			<div>
-				<div>Date</div><div id='3date'></div>
-				<div>Max</div><div id='3max'></div>
-				<div>Min</div><div id='3min'></div>
-				<div>Feels like</div><div id='3feelsLike'></div>
-				<div>Humidity</div><div id='3humidity'></div>
-				<div>Cloud cover</div><div id='3cloudCover'></div>
-				<div>UV index</div><div id='3uvIndex'></div>
-				<div>Rain (mm)</div><div id='3rain'></div>
-				<div>Chance of rain</div><div id='3chanceOfRain'></div>
-				<div>Wind speed</div><div id='3windSpeed'></div>
-				<div>Wind gust</div><div id='3windGust'></div>
-				<div>Wind direction</div><div id='3windDirection'></div>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Date</div>
+					<div class='weatherVal' id='3date'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Max/Feels like/Min</div>
+					<div class='weatherVal' id='3max'></div>
+					<div class='weatherVal' id='3feelsLike'></div>
+					<div class='weatherVal' id='3min'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Hum/Cloud/UV</div>
+					<div class='weatherVal' id='3humidity'></div>
+					<div class='weatherVal' id='3cloudCover'></div>
+					<div class='weatherVal' id='3uvIndex'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Rain chance/mm</div>
+					<div class='weatherVal' id='3chanceOfRain'></div>
+					<div class='weatherVal' id='3rain'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Wind speed/gust/dir</div>
+					<div class='weatherVal' id='3windSpeed'></div>
+					<div class='weatherVal' id='3windGust'></div>
+					<div class='weatherVal' id='3windDirection'></div>
+				</div><br><br>
 			</div>
 		</div>
 
 		<div class='weather'>
-			<div><img id='4currentImg'/></div>
+			<div class='weatherImg'><img id='4currentImg'/></div>
 			<div>
-				<div>Date</div><div id='4date'></div>
-				<div>Max</div><div id='4max'></div>
-				<div>Min</div><div id='4min'></div>
-				<div>Feels like</div><div id='4feelsLike'></div>
-				<div>Humidity</div><div id='4humidity'></div>
-				<div>Cloud cover</div><div id='4cloudCover'></div>
-				<div>UV index</div><div id='4uvIndex'></div>
-				<div>Rain (mm)</div><div id='4rain'></div>
-				<div>Chance of rain</div><div id='4chanceOfRain'></div>
-				<div>Wind speed</div><div id='4windSpeed'></div>
-				<div>Wind gust</div><div id='4windGust'></div>
-				<div>Wind direction</div><div id='4windDirection'></div>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Date</div>
+					<div class='weatherVal' id='4date'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Max/Feels like/Min</div>
+					<div class='weatherVal' id='4max'></div>
+					<div class='weatherVal' id='4feelsLike'></div>
+					<div class='weatherVal' id='4min'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Hum/Cloud/UV</div>
+					<div class='weatherVal' id='4humidity'></div>
+					<div class='weatherVal' id='4cloudCover'></div>
+					<div class='weatherVal' id='4uvIndex'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Rain chance/mm</div>
+					<div class='weatherVal' id='4chanceOfRain'></div>
+					<div class='weatherVal' id='4rain'></div>
+				</div><br>
+				<div class='weatherValPair'>
+					<div class='weatherValName'>Wind speed/gust/dir</div>
+					<div class='weatherVal' id='4windSpeed'></div>
+					<div class='weatherVal' id='4windGust'></div>
+					<div class='weatherVal' id='4windDirection'></div>
+				</div><br><br>
 			</div>
 		</div>
 
