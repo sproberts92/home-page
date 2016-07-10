@@ -1,15 +1,28 @@
 populateCurrentWeather = (data) ->
 	cCond = data['data']['current_condition'][0]
 	
-	$('#currentImg').attr('src', cCond['weatherIconUrl'][0]['value'])
+	$('#currentImg').attr('src', getWeatherImage(cCond))
 
-	$('#currentTemp'		).html(cCond['temp_C'])
+	$('#currentTemp'		).html(cCond['temp_C'] + '/')
 	$('#feelsLike'			).html(cCond['FeelsLikeC'])
-	$('#humidity'			).html(cCond['humidity'])
+	$('#humidity'			).html(cCond['humidity'] + '/')
 	$('#cloudCover'			).html(cCond['cloudcover'])
-	$('#windSpeed'			).html(cCond['windspeedKmph'])
+	$('#windSpeed'			).html(cCond['windspeedKmph'] + '/')
 	$('#windDirection'		).html(cCond['winddir16Point'])
 	$('#observationTime'	).html(cCond['observation_time'])
+
+getWeatherImage = (cCond) ->
+	wCode = parseInt(cCond['weatherCode'], 10)
+
+	if wCode is 113
+		'assets/weather/sun.svg'
+	else if wCode is 116
+		'assets/weather/cloud-2.svg'
+	else if wCode in [143, 122, 119]
+		'assets/weather/cloud-1.svg'
+	else
+		console.log wCode
+		cCond['weatherIconUrl'][0]['value']
 
 getDayName = (date) ->
 	daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -21,7 +34,7 @@ populateForcast = (data, day) ->
 	weather = data['data']['weather'][day]
 	hourly = data['data']['weather'][day]['hourly'][0]
 
-	$("##{day}currentImg").attr('src', hourly['weatherIconUrl'][0]['value'])
+	$("##{day}currentImg").attr('src', getWeatherImage(hourly))
 
 	dayName = ''
 	if day == 0

@@ -6,12 +6,18 @@ body {
 
 .weather {
 	// margin: auto;
-	width: 500pt;
+	width: 200pt;
 	font-size: 8pt;
 }
 
+.weatherGray {
+	background: #E9E9E9
+}
+
 .weatherImg {
-	width: 12%;
+	width: 50px;
+	height: 50px;
+	margin: 10px;
 	float: left;
 }
 
@@ -21,7 +27,7 @@ body {
 
 .weatherValName {
 	float: left;
-	width: 20%;
+	width: 120px;
 }
 
 .weatherVal {
