@@ -55,16 +55,35 @@ populateForcast = (data, day) ->
 	$("##{day}windGust"		).html(hourly['WindGustKmph'] + '/')
 	$("##{day}windDirection").html(hourly['winddir16Point'])
 
+populateStocks = (data) ->
+	count = data['query']['count']
+	for i in [0..count]
+		console.log data['query']['results']['quote'][i]
+
 $(document).ready ->
 
 	requestParams = {key : apiKey, q : loc, format: 'json', num_of_days: 5}
 
-	data = $.getJSON baseApiUrl, requestParams
+	data = $.getJSON baseWeatherApiUrl, requestParams
 		.success (data, resp) ->
 			populateCurrentWeather(data)
 			populateForcast(data, day) for day in [0..4]
 
 		.fail (data, resp) ->
+			console.log data
+			console.log resp
+
+	stocksString = stocks.join('","')
+	query = 'SELECT * FROM yahoo.finance.quotes where symbol in ("' + stocksString + '")'
+	
+	requestParams = {q: query, format: 'json', env: 'store://datatables.org/alltableswithkeys'}
+
+	data = $.getJSON baseFinanceApiUrl, requestParams
+		.success (data, resp) ->
+			populateStocks(data)
+			
+		.fail (data, resp) ->
+			console.log this.url
 			console.log data
 			console.log resp
 
