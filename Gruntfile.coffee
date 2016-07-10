@@ -33,19 +33,28 @@ module.exports = (grunt) ->
 			}
 		}
 
+		sass: {
+			dist: {
+				files: {
+					'build/style.css': 'style/style.scss'
+				}
+			}
+		}
+
 		watch: {
 			scripts: {
-				files: ['src/*.coffee'],
+				files: ['src/*.coffee', 'style/*.scss'],
 				tasks: ['default']
 			}
 		}
 
-		clean: ['build/*.js', 'build/*.coffee']
+		clean: ['build/*.js', 'build/*.coffee', 'build/*.css', 'build/*.css.map']
 	})
 
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 	grunt.loadNpmTasks 'grunt-contrib-concat'
+	grunt.loadNpmTasks 'grunt-contrib-sass'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-contrib-clean'
-	grunt.registerTask 'default', ['concat', 'coffee', 'uglify']
+	grunt.registerTask 'default', ['concat', 'coffee', 'uglify', 'sass']
