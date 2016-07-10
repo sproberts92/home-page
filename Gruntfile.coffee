@@ -2,8 +2,8 @@ module.exports = (grunt) ->
 	grunt.initConfig({
 		concat: {
 			files: {
-				src: ['src/home-page.coffee']
-				dest: 'build/home-page.coffee'
+				src: ['src/home-page.coffee', 'settings.coffee']
+				dest: 'build/home-page.concat.coffee'
 			}
 		}
 
@@ -13,7 +13,7 @@ module.exports = (grunt) ->
 					bare: true
 				},
 				files :{
-					'build/home-page.js': ['build/home-page.coffee']
+					'build/home-page.js': ['build/home-page.concat.coffee']
 				}
 			}
 		}
@@ -28,7 +28,7 @@ module.exports = (grunt) ->
 			},
 			my_target: {
 				files: {
-					'build/home-page.min.js': ['build/home-page.bundle.js']
+					'build/home-page.min.js': ['build/home-page.js']
 				}
 			}
 		}
